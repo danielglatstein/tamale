@@ -4,7 +4,7 @@
   <p><%= notice %></p>
 <% end %>
 
-<% @cart.item_line.each do |item_line| %>
+<% @cart.item_lines.each do |item_line| %>
   <p><%= link_to item_line.item.title, item_path(item_line.item) %> | <%= number_to_currency(item_line.item.price) %> | Quantity: <%= item_line.quantity %> | <% if item_line.item.inventory < 5 %>
     <strong>There are only <%= item_line.item.inventory %> left in stock.</strong>
   <% end %> </p>

@@ -1,18 +1,18 @@
 class Cart < ActiveRecord::Base
-  has_many :line_items
-  has_many :items, through: :line_items
+  has_many :item_lines
+  has_many :items, through: :item_lines
   has_many :orders
 
   def add_item(item_id)
     item = Item.find(item_id)
-    line_item = LineItem.find_or_initialize_by({item_id: item.id, cart_id: self.id})
-    line_item.quantity += 1
-    line_item.tap(&:save)
+    item_line = ItemLine.find_or_initialize_by({item_id: item.id, cart_id: self.id})
+    item_line.quantity += 1
+    item_line.tap(&:save)
   end
 
   def total
-    self.line_items.inject(0) do |sum, line_item|
-      sum = sum + (line_item.quantity * line_item.item.price)
+    self.item_lines.inject(0) do |sum, item_line|
+      sum = sum + (item_line.quantity * item_line.item.price)
     end
   end
 

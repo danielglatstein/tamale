@@ -13,9 +13,9 @@ class Order < ActiveRecord::Base
   end
 
   def change_inventory
-    self.item_lines.each do |line_item|
-      item_lines.item.inventory -= item_lines.quantity
-      item_lines.item.save
+    self.item_lines.each do |item_line|
+      item_line.item.inventory -= item_line.quantity
+      item_line.item.save
     end
   end
 end
