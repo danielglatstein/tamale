@@ -1,0 +1,12 @@
+<div id="user_nav">
+  <% if current_user %>
+    Logged in as <%= current_user.name %>
+    <%= link_to "Log Out", signout_path %>
+  <% else %>
+    <%= link_to "Log In with Facebook", signin_path %>
+  <% end %>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+</div>
