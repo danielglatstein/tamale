@@ -9,6 +9,7 @@ class ItemLinesController < ApplicationController
     item = Item.find(params[:item_id])
     cart.add_item(item.id)
     cart.save
+    render json {cart: cart_view_obj}
     redirect_to "/carts/#{cart.id}"
   end
 

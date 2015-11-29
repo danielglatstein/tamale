@@ -23,14 +23,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'stripe', '~> 1.31'
+gem 'handlebars_assets'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
 gem 'figaro', '~> 1.1.1'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'koala', '~> 2.2'
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails', '~> 3.2'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

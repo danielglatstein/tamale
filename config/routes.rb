@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  namespace :api do
+    resources :items
+  end
   resources :charges
-  root 'store#index', as: 'store'
+  root 'store#show', as: 'store'
   resources :items, only: [:show, :index]
   post "items/:id/add_to_cart", to: "items#add_to_cart"
   resources :carts
