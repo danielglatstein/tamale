@@ -1,13 +1,17 @@
 <div class="row">
+    <div id="current_cart" data-id="<%= @cart.id %>"></div>
 
-  <%= render partial: 'items/index' %>
+    <%= render partial: 'items/index' %>
 
-  <%= render partial: 'items/show' %>
+    <%= render partial: 'items/show' %>
 
-  <%= render partial: 'cart/show' %>
+    <%= render partial: 'cart/show' %>
 
-  <div id="container" class="col-xs-6">
-  </div>
-  <div id="show" class="col-xs-6">
-  </div>
+    <div id="container" class="col-xs-6">
+    </div>
+
+    <div id="show" class="col-xs-6">
+    </div>
+
+
 </div>
